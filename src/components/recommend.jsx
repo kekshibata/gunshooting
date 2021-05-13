@@ -15,6 +15,7 @@ const Recommend = () => (
       src="../images/note-image.jpeg"
       alt="hodsd攻略記事のおすすめ"
       className={image}
+      imgStyle={{ verticalAlign: 'bottom' }}
       imgClassName="algin-middle"
     />
     <div className={band}>
