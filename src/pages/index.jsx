@@ -44,7 +44,7 @@ export default function HOME() {
           <ul className="px-2 py-2.5">
             <li className="block relative">
               <Link to="/">
-                <StaticImage src="../images/game-hodsd.png" className="w-auto block rounded-lg shadow-lg z-10" />
+                <StaticImage src="../images/game-hodsd.png" className="w-auto block align-middle rounded-lg shadow-lg z-10" />
                 <div className={`absolute bottom-0 z-20 flex items-center justify-center rounded-b-lg h-8 w-full font-semibold text-white ${bgBlack}`}>
                   ハウスオブザデッド スカーレットドーン 攻略wiki
                 </div>
