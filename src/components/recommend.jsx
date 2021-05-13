@@ -11,7 +11,12 @@ import {
 
 const Recommend = () => (
   <a href="#" className={recommendCard}>
-    <StaticImage src="../images/note-image.jpeg" alt="hodsd攻略記事のおすすめ" className={image} />
+    <StaticImage
+      src="../images/note-image.jpeg"
+      alt="hodsd攻略記事のおすすめ"
+      className={image}
+      imgClassName="algin-middle"
+    />
     <div className={band}>
       <span className={bandItem}>詳細を見る</span>
       <span className={bandItem}><FaChevronRight size={12} /></span>
