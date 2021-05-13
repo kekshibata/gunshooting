@@ -5,6 +5,7 @@
   margin: 0;
   width: 100%;
   display: block;
+  border: 1px solid #385623;
 }
 
 .band {
