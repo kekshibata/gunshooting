@@ -44,8 +44,8 @@ export default function HOME() {
           <ul className="px-2 py-2.5">
             <li className="block relative">
               <Link to="/">
-                <StaticImage src="../images/game-hodsd.png" className="w-auto block rounded-lg shadow-lg" />
-                <div className={`absolute bottom-0 flex items-center justify-center rounded-b-lg h-8 w-full font-semibold text-white ${bgBlack}`}>
+                <StaticImage src="../images/game-hodsd.png" className="w-auto block rounded-lg shadow-lg z-10" />
+                <div className={`absolute bottom-0 z-20 flex items-center justify-center rounded-b-lg h-8 w-full font-semibold text-white ${bgBlack}`}>
                   ハウスオブザデッド スカーレットドーン 攻略wiki
                 </div>
               </Link>
@@ -59,7 +59,7 @@ export default function HOME() {
           <div className="px-6 py-4">
             <ul className="flex flex-row items-center justify-around">
               <li className="px-2 flex flex-col items-center">
-                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full" />
+                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full z-10" />
                 <div className="font-semibold mt-2 mb-1 text-base">
                   MIKADO
                 </div>
@@ -76,7 +76,7 @@ export default function HOME() {
                 </div>
               </li>
               <li className="px-2 flex flex-col items-center">
-                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full" />
+                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full z-10" />
                 <div className="font-semibold mt-2 mb-1 text-base">
                   MIKADO
                 </div>

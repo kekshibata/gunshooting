@@ -20,12 +20,12 @@ const Posts = () => (
     <div className={container}>
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>
@@ -41,12 +41,12 @@ const Posts = () => (
 
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>
@@ -62,12 +62,12 @@ const Posts = () => (
 
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>
@@ -83,12 +83,12 @@ const Posts = () => (
 
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>
@@ -104,12 +104,12 @@ const Posts = () => (
 
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>
@@ -125,12 +125,12 @@ const Posts = () => (
 
       <div className={wrapper}>
         <div className={content}>
-          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={imageCss} />
+          <StaticImage src="../images/note-image.jpeg" alt="eyecatch" className={`z-10 ${imageCss}`} />
           <dl>
             <dt className={heading}>タイトル</dt>
             <dd className={attributesContainer}>
               <div className={attr}>
-                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={avatarImg} />
+                <StaticImage src="../images/note-image.jpeg" alt="avatar" className={`z-10 ${avatarImg}`} />
                 <div>MIKADO</div>
               </div>
               <div className={attr}>

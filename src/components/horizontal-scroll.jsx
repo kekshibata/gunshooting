@@ -15,31 +15,31 @@ const HorizontalScroll = () => (
   <div className={wrapper}>
     <ul className={innerContainer}>
       <li className={item}>
-        <StaticImage src="../images/note-image.jpeg" alt="item" className={imageCss} />
-        <div className={tag}>カテゴリ</div>
-        <div className={titleLabel}>
-          <div className={title}>タイトル</div>
+        <StaticImage src="../images/note-image.jpeg" alt="item" className={`z-10 ${imageCss}`} />
+        <div className={`z-20 ${tag}`}>カテゴリ</div>
+        <div className={`z-20 ${titleLabel}`}>
+          <div className={`z-20 ${title}`}>タイトル</div>
         </div>
       </li>
       <li className={item}>
-        <StaticImage src="../images/note-image.jpeg" alt="item" className={imageCss} />
-        <div className={tag}>カテゴリ</div>
-        <div className={titleLabel}>
-          <div className={title}>タイトル</div>
+        <StaticImage src="../images/note-image.jpeg" alt="item" className={`z-10 ${imageCss}`} />
+        <div className={`z-20 ${tag}`}>カテゴリ</div>
+        <div className={`z-20 ${titleLabel}`}>
+          <div className={`z-20 ${title}`}>タイトル</div>
         </div>
       </li>
       <li className={item}>
-        <StaticImage src="../images/note-image.jpeg" alt="item" className={imageCss} />
-        <div className={tag}>カテゴリ</div>
-        <div className={titleLabel}>
-          <div className={title}>タイトル</div>
+        <StaticImage src="../images/note-image.jpeg" alt="item" className={`z-10 ${imageCss}`} />
+        <div className={`z-20 ${tag}`}>カテゴリ</div>
+        <div className={`z-20 ${titleLabel}`}>
+          <div className={`z-20 ${title}`}>タイトル</div>
         </div>
       </li>
       <li className={item}>
-        <StaticImage src="../images/note-image.jpeg" alt="item" className={imageCss} />
-        <div className={tag}>カテゴリ</div>
-        <div className={titleLabel}>
-          <div className={title}>タイトル</div>
+        <StaticImage src="../images/note-image.jpeg" alt="item" className={`z-10 ${imageCss}`} />
+        <div className={`z-20 ${tag}`}>カテゴリ</div>
+        <div className={`z-20 ${titleLabel}`}>
+          <div className={`z-20 ${title}`}>タイトル</div>
         </div>
       </li>
     </ul>
