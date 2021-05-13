@@ -15,8 +15,7 @@ const Recommend = () => (
       src="../images/note-image.jpeg"
       alt="hodsd攻略記事のおすすめ"
       className={image}
-      imgStyle={{ display: 'block' }}
-      imgClassName="algin-middle"
+      imgStyle={{ display: 'block', verticalAlign: 'middle' }}
     />
     <div className={band}>
       <span className={bandItem}>詳細を見る</span>
