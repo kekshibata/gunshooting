@@ -1,0 +1,45 @@
+.wrapper {
+  background-color: #f2f2f2;
+}
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px 10px;
+}
+.item {
+  position: relative;
+  border-radius: 5px;
+  margin: 10px 10px;
+  list-style: none;
+}
+.imageCss {
+  width: 300px;
+  display: block;
+  border-radius: 5px;
+}
+.tag {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  color: #fff;
+  font-weight: 600;
+  padding: 2px 5px;
+  background-color: var(--color-red);
+  border-radius: 3px;
+}
+.titleLabel {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 5px 5px;
+}
+.title {
+  font-weight: 600;
+  text-align: left;
+  color: #fff;
+  vertical-align: top;
+  padding: 10px 10px;
+}

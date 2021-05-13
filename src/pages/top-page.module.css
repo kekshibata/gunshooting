@@ -1,0 +1,25 @@
+.bgGray {
+  background-color: #f2f2f2;
+}
+
+.bgBlack {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.twitter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  margin-left: 4px;
+  color: var(--color-twitter);
+}
+
+.youtube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  margin-left: 4px;
+  color: var(--color-youtube);
+}

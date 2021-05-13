@@ -1,0 +1,31 @@
+.recommendCard {
+}
+
+.image {
+  margin: 0;
+  width: 100%;
+  display: block;
+}
+
+.band {
+  margin: 0;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(to right, #710891, #cb0606);
+}
+
+.bandItem {
+  font-weight: 600;
+  color: #fff;
+}
+
+.bandItem:nth-child(1) {
+  margin-right: 10px;
+}
+
+.bandItem:nth-child(2) {
+  margin-right: 10px;
+}

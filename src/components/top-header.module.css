@@ -1,0 +1,31 @@
+.fixedHeader {
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.item {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.item:nth-child(1) {
+  margin-left: 10px;
+}
+
+.innerItem {
+  font-weight: 600;
+  color: var(--text-gray);
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+
+.innerItem.active {
+  background-color: var(--color-red);
+}

@@ -1,3 +1,51 @@
+/* import tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* css */
+
 body {
   margin: 0;
+  font-size: 14px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+/* heading */
+.heading-wrapper {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.heading {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: var(--color-red);
+  top: 50%;
+  transform: translateY(-50%);
+  left: -30px;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: var(--color-red);
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
 }
