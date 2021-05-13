@@ -18,6 +18,7 @@
   width: 300px;
   display: block;
   border-radius: 5px;
+  vertical-align: middle;
 }
 .tag {
   position: absolute;
