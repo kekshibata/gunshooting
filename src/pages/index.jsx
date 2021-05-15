@@ -1,6 +1,6 @@
 import React from 'react';
-import { Element } from 'react-scroll';
-import { Link } from 'gatsby';
+
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FaTwitter, FaYoutube } from 'react-icons/fa';
 
@@ -20,6 +20,36 @@ import {
 } from './top-page.module.css';
 
 export default function HOME() {
+  const postsData = useStaticQuery(graphql`
+  query MyQuery {
+    allMicrocmsBlog(sort: {order: DESC, fields: createdAt}, limit: 6) {
+      edges {
+        node {
+          title
+          blogId
+          id
+          createdAt(formatString: "YYYY/MM/DD")
+          writer {
+            name
+            image {
+              url
+            }
+          }
+          eyeCatch {
+            image {
+              url
+            }
+          }
+        }
+      }
+    }
+  }  
+  `);
+
+  console.log(postsData);
+
+  const postsList = postsData.allMicrocmsBlog.edges;
+
   return (
     <>
       <Layout>
@@ -32,7 +62,9 @@ export default function HOME() {
           <div className="heading-wrapper">
             <div className="heading">新着記事</div>
           </div>
-          <Posts />
+          {postsList.map(({ node }) => (
+            <Posts title={node.title} writer={node.writer} createdAt={node.createdAt} imageUrl={node.eyeCatch?.image?.url} />
+          ))}
           <div className="py-6 flex justify-center">
             <Button variant="outline" color="red" to="/">
               記事一覧を見る
