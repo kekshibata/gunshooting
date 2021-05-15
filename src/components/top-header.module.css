@@ -1,5 +1,6 @@
 .fixedHeader {
   background-color: #fff;
+  z-index: 999;
 }
 
 .navbar {
@@ -24,8 +25,5 @@
   color: var(--text-gray);
   padding: 2px 6px;
   vertical-align: middle;
-}
-
-.innerItem.active {
-  background-color: var(--color-red);
+  border-radius: 10px;
 }

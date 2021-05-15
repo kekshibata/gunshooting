@@ -49,3 +49,8 @@ section {
   transform: translateY(-50%);
   right: -30px;
 }
+
+.active {
+  color: #fff !important;
+  background-color: var(--color-red);
+}

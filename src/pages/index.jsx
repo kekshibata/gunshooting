@@ -24,8 +24,10 @@ export default function HOME() {
     <>
       <Layout>
         <TopHeader />
-        <Recommend />
-        <HorizontalScroll />
+        <section id="top" className="p-0">
+          <Recommend />
+          <HorizontalScroll />
+        </section>
         <section id="posts">
           <div className="heading-wrapper">
             <div className="heading">新着記事</div>
