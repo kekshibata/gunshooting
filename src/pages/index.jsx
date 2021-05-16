@@ -106,7 +106,7 @@ export default function HOME() {
           <div className="heading-wrapper">
             <div className="heading">ライター</div>
           </div>
-          <div className="px-6 py-4">
+          <div className="px-6 pt-4 pb-12">
             <ul className="flex flex-row items-center justify-around">
               {writersList.map(({ node }) => (
 
