@@ -10,7 +10,7 @@ import {
 } from './recommend.module.css';
 
 const Recommend = () => (
-  <a href="#">
+  <a href="https://note.com/sg_hss/m/mc57e3443affe" target="_blank" rel="noopener noreferrer">
     <div className={`shiny ${recommendCard}`}>
       <StaticImage
         src="../images/note-image.jpeg"

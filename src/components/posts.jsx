@@ -23,7 +23,9 @@ const Posts = ({
       <div className={content}>
         {imageUrl && <ImgixGatsbyImage src={imageUrl} layout="constrained" aspectRatio={16 / 9} alt="アイキャッチ" className={`z-10 ${imageCss}`} />}
         <dl>
-          <dt className={heading}>{title}</dt>
+          <dt className={heading}>
+            {title.length > 23 ? `${title.substr(0, 22)}...` : title }
+          </dt>
           <dd className={attributesContainer}>
             <div className={attr}>
               <ImgixGatsbyImage src={writer.image?.url} layout="constrained" width={40} height={40} alt="avatar" className={`z-10 ${avatarImg}`} />

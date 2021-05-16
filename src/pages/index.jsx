@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FaTwitter, FaYoutube } from 'react-icons/fa';
+import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import TopHeader from '../components/top-header';
 import Recommend from '../components/recommend';
@@ -20,8 +21,8 @@ import {
 } from './top-page.module.css';
 
 export default function HOME() {
-  const postsData = useStaticQuery(graphql`
-  query MyQuery {
+  const data = useStaticQuery(graphql`
+  query {
     allMicrocmsBlog(sort: {order: DESC, fields: createdAt}, limit: 6) {
       edges {
         node {
@@ -43,12 +44,22 @@ export default function HOME() {
         }
       }
     }
+    allMicrocmsWriter (sort: {order: ASC, fields: createdAt}) {
+      edges {
+        node {
+          name
+          image {
+            url
+          }
+          twitter
+        }
+      }
+    }
   }  
   `);
 
-  console.log(postsData);
-
-  const postsList = postsData.allMicrocmsBlog.edges;
+  const postsList = data.allMicrocmsBlog.edges;
+  const writersList = data.allMicrocmsWriter.edges;
 
   return (
     <>
@@ -63,10 +74,15 @@ export default function HOME() {
             <div className="heading">新着記事</div>
           </div>
           {postsList.map(({ node }) => (
-            <Posts title={node.title} writer={node.writer} createdAt={node.createdAt} imageUrl={node.eyeCatch?.image?.url} />
+            <Posts
+              title={node.title}
+              writer={node.writer}
+              createdAt={node.createdAt}
+              imageUrl={node.eyeCatch?.image?.url}
+            />
           ))}
           <div className="py-6 flex justify-center">
-            <Button variant="outline" color="red" to="/">
+            <Button variant="outline" color="red" to="/posts">
               記事一覧を見る
             </Button>
           </div>
@@ -92,44 +108,29 @@ export default function HOME() {
           </div>
           <div className="px-6 py-4">
             <ul className="flex flex-row items-center justify-around">
-              <li className="px-2 flex flex-col items-center">
-                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full z-10" />
-                <div className="font-semibold mt-2 mb-1 text-base">
-                  MIKADO
-                </div>
-                <div className="flex flex-row items-center justify-around my-1">
-                  <a href="https://twitter.com/gunshootingnet?s=20" className={twitter} target="_blank" rel="noopener noreferrer">
-                    <FaTwitter />
-                  </a>
-                  <a href="https://twitter.com/gunshootingnet?s=20" className={youtube} target="_blank" rel="noopener noreferrer">
-                    <FaYoutube />
-                  </a>
-                </div>
-                <div className="my-1">
-                  <Button variant="outline" to="/" size="small">Profile</Button>
-                </div>
-              </li>
-              <li className="px-2 flex flex-col items-center">
-                <StaticImage src="../images/note-image.jpeg" className="w-32 h-32 rounded-full z-10" />
-                <div className="font-semibold mt-2 mb-1 text-base">
-                  MIKADO
-                </div>
-                <div className="flex flex-row items-center justify-around my-1">
-                  <a href="https://twitter.com/gunshootingnet?s=20" className={twitter} target="_blank" rel="noopener noreferrer">
-                    <FaTwitter />
-                  </a>
-                  <a href="https://twitter.com/gunshootingnet?s=20" className={youtube} target="_blank" rel="noopener noreferrer">
-                    <FaYoutube />
-                  </a>
-                </div>
-                <div className="my-1">
-                  <Button variant="outline" to="/" size="small">Profile</Button>
-                </div>
-              </li>
+              {writersList.map(({ node }) => (
+
+                <li className="px-2 flex flex-col items-center">
+                  <ImgixGatsbyImage src={node.image.url} layout="constrained" width={128} height={128} className="rounded-full z-10" />
+                  <div className="font-semibold mt-2 mb-1 text-base">
+                    {node.name}
+                  </div>
+                  <div className="flex flex-row items-center justify-around my-1">
+                    <a href={`https://twitter.com/${node.twitter}`} className={twitter} target="_blank" rel="noopener noreferrer">
+                      <FaTwitter />
+                    </a>
+                    <a href="https://twitter.com/gunshootingnet?s=20" className={youtube} target="_blank" rel="noopener noreferrer">
+                      <FaYoutube />
+                    </a>
+                  </div>
+                  <div className="my-1">
+                    <Button variant="outline" to="/" size="small">Profile</Button>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
-        <Footer />
       </Layout>
     </>
   );
