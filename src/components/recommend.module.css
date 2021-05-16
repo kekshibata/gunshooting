@@ -1,4 +1,10 @@
 .recommendCard {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.recommendCard:hover {
+  opacity: 0.6;
+  position: relative;
 }
 
 .image {

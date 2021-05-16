@@ -21,7 +21,8 @@
 }
 
 .heading {
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 dl {

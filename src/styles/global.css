@@ -17,13 +17,13 @@ section {
 /* heading */
 .heading-wrapper {
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 0 20px 0;
 }
 
 .heading {
   display: inline-block;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.25rem;
   text-align: center;
   position: relative;
 }
@@ -53,4 +53,42 @@ section {
 .active {
   color: #fff !important;
   background-color: var(--color-red);
+}
+
+.shiny {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  z-index: 50;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 200px;
+  background-color: #fff;
+  opacity: 0.6;
+  animation: shiny 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes shiny {
+  0% {
+    -webkit-transform: scale(0) rotate(30deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(30deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(30deg);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(60) rotate(30deg);
+    opacity: 0;
+  }
 }

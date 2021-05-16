@@ -10,15 +10,17 @@ import {
 } from './recommend.module.css';
 
 const Recommend = () => (
-  <a href="#" className={recommendCard}>
-    <StaticImage
-      src="../images/note-image.jpeg"
-      alt="hodsd攻略記事のおすすめ"
-      className={image}
-    />
-    <div className={band}>
-      <span className={bandItem}>詳細を見る</span>
-      <span className={bandItem}><FaChevronRight size={12} /></span>
+  <a href="#">
+    <div className={`shiny ${recommendCard}`}>
+      <StaticImage
+        src="../images/note-image.jpeg"
+        alt="hodsd攻略記事のおすすめ"
+        className={image}
+      />
+      <div className={band}>
+        <span className={bandItem}>詳細を見る</span>
+        <span className={bandItem}><FaChevronRight size={12} /></span>
+      </div>
     </div>
   </a>
 );
