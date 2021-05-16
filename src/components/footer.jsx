@@ -14,9 +14,9 @@ const Footer = () => (
   <>
     <hr className={border} />
     <div className="flex flex-col items-center">
-      <button className={toTopButton} onClick={() => { console.log('clicked'); scroll.scrollToTop; }}>
+      <div className={toTopButton} onClick={() => { scroll.scrollToTop(); }}>
         <FiChevronUp size={18} color="white" />
-      </button>
+      </div>
       <div className="mb-10 mt-2">
         <Logo height="40px" />
       </div>

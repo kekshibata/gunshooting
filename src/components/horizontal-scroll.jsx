@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import {
