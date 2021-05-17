@@ -1,0 +1,40 @@
+.titleHeader {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8px;
+}
+
+.navMenu {
+  position: relative;
+}
+.navMenu::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.menuItem {
+  display: block;
+  position: relative;
+  float: left;
+  width: calc(100% / 3);
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+
+.menuItemInner {
+  display: block;
+  padding: 0 4px;
+  border-right: 1px solid var(--color-lightgray);
+  border-bottom: 1px solid var(--color-lightgray);
+  font-weight: 600;
+}
+
+.menuItemInner:nth-child(3n) {
+  border-right: none;
+}
