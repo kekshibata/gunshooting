@@ -20,7 +20,7 @@ const GameHeader = ({
         攻略wiki
       </div>
     </div>
-    <ImgixGatsbyImage src={headerSource} layout="constrained" height={90} aspectRatio={16 / 5} className="w-full block" />
+    <ImgixGatsbyImage src={headerSource} layout="constrained" height={90} aspectRatio={16 / 5} className="w-full block align-middle" />
     <ul className={navMenu}>
       {menu.map(({ name: menuName, slug: menuSlug }) => (
         <li className={menuItem}>
