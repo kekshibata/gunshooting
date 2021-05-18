@@ -122,14 +122,14 @@ export default function HOME() {
 
                 <li className="px-2 flex flex-col items-center">
                   <ImgixGatsbyImage src={node.image.url} layout="constrained" width={128} height={128} className="rounded-full z-10" />
-                  <div className="font-semibold mt-2 mb-1 text-base">
+                  <div className="font-semibold mt-2 mb-1 text-lg">
                     {node.name}
                   </div>
                   <div className="flex flex-row items-center justify-around my-1">
-                    <a href={`https://twitter.com/${node.twitter}`} className={twitter} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://twitter.com/${node.twitter}`} aria-label="link to twitter account" className={twitter} target="_blank" rel="noopener noreferrer">
                       <FaTwitter />
                     </a>
-                    <a href={`https://youtube.com/channel/${node.youtube}`} className={youtube} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://youtube.com/channel/${node.youtube}`} aria-label="link to youtube channel" className={youtube} target="_blank" rel="noopener noreferrer">
                       <FaYoutube />
                     </a>
                   </div>

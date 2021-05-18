@@ -15,7 +15,7 @@ import {
 const Header = () => (
   <div className={container}>
     <header className={header}>
-      <Link to="/" className={logoCss}>
+      <Link to="/" aria-label="logo link to top" className={logoCss}>
         <Logo height="25px" />
       </Link>
       <p className={description}>
@@ -23,7 +23,7 @@ const Header = () => (
         <br />
         総合情報・攻略サイト
       </p>
-      <a href="https://twitter.com/gunshootingnet?s=20" className={twitter} target="_blank" rel="noopener noreferrer">
+      <a href="https://twitter.com/gunshootingnet?s=20" aria-label="link to twitter account" className={twitter} target="_blank" rel="noopener noreferrer">
         <FaTwitter />
       </a>
     </header>

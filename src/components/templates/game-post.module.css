@@ -25,6 +25,7 @@
 
 .status {
   color: var(--text-gray);
+  font-size: 14px;
 }
 
 .status > div {
