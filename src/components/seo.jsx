@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -19,7 +20,7 @@ const query = graphql`
   `;
 
 const SEO = ({
-  title, description, image, article,
+  title, description, image, article, lang,
 }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
@@ -39,7 +40,13 @@ const SEO = ({
     url: `${siteUrl}${pathname}`,
   };
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet
+      title={seo.title}
+      titleTemplate={titleTemplate}
+      htmlAttributes={{
+        lang,
+      }}
+    >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -63,3 +70,18 @@ const SEO = ({
 };
 
 export default SEO;
+
+SEO.propTypes = {
+  lang: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
+};
+SEO.defaultProps = {
+  lang: 'ja',
+  title: null,
+  description: null,
+  image: null,
+  article: false,
+};
