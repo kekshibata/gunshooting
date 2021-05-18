@@ -55,6 +55,7 @@ export default function HOME() {
             url
           }
           twitter
+          youtube
         }
       }
     }
@@ -124,7 +125,7 @@ export default function HOME() {
                     <a href={`https://twitter.com/${node.twitter}`} className={twitter} target="_blank" rel="noopener noreferrer">
                       <FaTwitter />
                     </a>
-                    <a href="https://twitter.com/gunshootingnet?s=20" className={youtube} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://youtube.com/channel/${node.youtube}`} className={youtube} target="_blank" rel="noopener noreferrer">
                       <FaYoutube />
                     </a>
                   </div>
