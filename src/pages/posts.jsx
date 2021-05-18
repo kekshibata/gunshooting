@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Posts from '../components/posts';
 
 const BlogPosts = ({ data }) => (
   <>
+    <SEO title="全記事一覧" />
     <Layout>
       <div className="pt-4 pb-8">
         <h1 className="font-bold text-xl ml-2 mb-4">全記事一覧</h1>

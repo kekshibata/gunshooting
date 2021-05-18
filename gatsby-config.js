@@ -14,10 +14,9 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     siteUrl: 'https://gunshooting.net',
-    title: 'GunShooting',
+    title: 'ガンシューティング',
     titleTemplate: '%s | ガンシューティングゲーム総合情報・攻略サイト',
     description: 'ガンシューティングゲーム総合情報・攻略サイト',
-    author: 'koki shibata',
     image: 'favicon.PNG',
     twitterUsername: '@gunshootingnet',
   },

@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
+import SEO from '../components/seo';
 import TopHeader from '../components/top-header';
 import Layout from '../components/layout';
 import Recommend from '../components/recommend';
@@ -68,6 +69,7 @@ export default function HOME() {
 
   return (
     <>
+      <SEO />
       <Layout>
         <TopHeader />
         <section id="top" className="p-0">

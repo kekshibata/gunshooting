@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { BiChevronRight } from 'react-icons/bi';
 
+import SEO from '../../components/seo';
 import Layout from '../../components/layout';
 import GameHeader from '../../components/game-header';
 import Recommend from '../../components/recommend';
@@ -24,28 +25,31 @@ const GamePage = ({ data }) => {
     },
   } = data.microcmsGames;
   return (
-    <Layout>
-      <GameHeader
-        slug={slug}
-        gameName={gameName}
-        menu={menu}
-        iconSource={iconSource}
-        headerSource={headerSource}
-      />
-      <div className={buffer}>
-        <div className={breadcrumb}>
-          <Link to="/">ガンシューティング</Link>
-          <BiChevronRight />
-          <Link to={`/${slug}`}>
-            {gameName}
-            攻略wiki
-          </Link>
+    <>
+      <SEO title={`${gameName}攻略wiki`} />
+      <Layout>
+        <GameHeader
+          slug={slug}
+          gameName={gameName}
+          menu={menu}
+          iconSource={iconSource}
+          headerSource={headerSource}
+        />
+        <div className={buffer}>
+          <div className={breadcrumb}>
+            <Link to="/">ガンシューティング</Link>
+            <BiChevronRight />
+            <Link to={`/${slug}`}>
+              {gameName}
+              攻略wiki
+            </Link>
+          </div>
+          <div className="mt-6 mb-5">
+            <Recommend />
+          </div>
         </div>
-        <div className="mt-6 mb-5">
-          <Recommend />
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
