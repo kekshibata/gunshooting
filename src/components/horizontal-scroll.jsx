@@ -22,6 +22,7 @@ const HorizontalScroll = () => {
         edges {
           node {
             title
+            slug
             blogId
             createdAt(formatString: "YYYY/MM/DD")
             eyeCatch {
@@ -55,6 +56,7 @@ const HorizontalScroll = () => {
         {pickedList.map(({ node }) => {
           const {
             title,
+            slug,
             blogId,
             eyeCatch: {
               image: {
@@ -71,7 +73,7 @@ const HorizontalScroll = () => {
             <li
               className={`shadow-xl ${item}`}
             >
-              <Link to={game ? `/${game.slug}/${blogId}` : `/posts/${blogId}`}>
+              <Link to={game ? `/${game.slug}/${slug}` : `/posts/${blogId}`}>
                 <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
                 <div className={`z-20 ${tag}`}>{categoryName}</div>
                 <div className={`z-20 ${titleLabel}`}>
