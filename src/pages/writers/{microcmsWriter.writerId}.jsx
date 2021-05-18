@@ -27,7 +27,7 @@ const WriterPage = ({ data }) => {
         aspectRatio={1 / 1}
         width={160}
         height={160}
-        className={`rounded-full z-10 block mx-auto shadow-xl my-4 ${avatar}`}
+        className={`rounded-full z-10 block align-middle mx-auto shadow-xl my-4 ${avatar}`}
       />
       <div className="text-center font-bold text-xl">{name}</div>
       <article className={body} dangerouslySetInnerHTML={{ __html: `${bio}` }} />
