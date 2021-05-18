@@ -49,6 +49,7 @@ export default function HOME() {
     allMicrocmsWriter (sort: {order: ASC, fields: createdAt}) {
       edges {
         node {
+          writerId
           name
           image {
             url
@@ -128,7 +129,7 @@ export default function HOME() {
                     </a>
                   </div>
                   <div className="my-1">
-                    <Button variant="outline" to="/" size="small">Profile</Button>
+                    <Button variant="outline" to={`/writers/${node.writerId}`} size="small">Profile</Button>
                   </div>
                 </li>
               ))}

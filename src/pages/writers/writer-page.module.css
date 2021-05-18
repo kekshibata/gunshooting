@@ -1,0 +1,9 @@
+.avatar {
+  width: 160px;
+  height: 160px;
+}
+
+.body {
+  padding: 1rem 0.5rem;
+  line-height: 1.75;
+}
