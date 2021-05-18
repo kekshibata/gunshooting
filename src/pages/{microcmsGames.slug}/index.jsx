@@ -23,10 +23,13 @@ const GamePage = ({ data }) => {
     headerImage: {
       url: headerSource,
     },
+    thumbnailImage: {
+      url: thumbnailSource,
+    },
   } = data.microcmsGames;
   return (
     <>
-      <SEO title={`${gameName}攻略wiki`} />
+      <SEO title={`${gameName}攻略wiki`} image={thumbnailSource} />
       <Layout>
         <GameHeader
           slug={slug}
@@ -65,10 +68,13 @@ export const pageQuery = graphql`
             }
             headerImage {
                 url
-              }
-              iconImage {
-                url
-              }
+            }
+            iconImage {
+              url
+            }
+            thumbnailImage {
+              url
+            }
           }
     }
 `;

@@ -29,7 +29,7 @@ const BlogPost = ({ data }) => {
   } = data.microcmsBlog;
   return (
     <>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} image={eyeCatchSource} />
       <Layout>
         <ImgixGatsbyImage src={eyeCatchSource} layout="constrained" aspectRatio={16 / 9} className="w-full block align-middle" />
         <article className="p-2">

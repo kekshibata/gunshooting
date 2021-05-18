@@ -45,7 +45,7 @@ const GamePost = ({ data }) => {
   } = data.microcmsBlog;
   return (
     <>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} image={eyeCatchSource} />
       <Layout>
         <GameHeader
           slug={slug}
