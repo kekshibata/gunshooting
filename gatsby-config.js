@@ -13,9 +13,13 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
+    siteUrl: 'https://gunshooting.net',
     title: 'GunShooting',
+    titleTemplate: '%s | ガンシューティングゲーム総合情報・攻略サイト',
     description: 'ガンシューティングゲーム総合情報・攻略サイト',
     author: 'koki shibata',
+    image: 'favicon.PNG',
+    twitterUsername: '@gunshootingnet',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,11 +29,24 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Gun Shooting',
+        short_name: 'GunShooting',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'static/favicon.PNG',
       },
     },
     {

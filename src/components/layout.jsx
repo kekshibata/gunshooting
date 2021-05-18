@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
 
@@ -10,6 +11,7 @@ import {
 const Layout = (props) => (
   <>
     <div className="max-w-lg mx-auto bg-white">
+      <SEO />
       <Header />
       <main>{props.children}</main>
       <Footer />
