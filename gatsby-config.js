@@ -13,7 +13,7 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    siteUrl: 'https://gunshooting.net',
+    siteUrl: 'https://gunshooting.gatsbyjs.io',
     title: 'ガンシューティング',
     titleTemplate: '%s | ガンシューティングゲーム総合情報・攻略サイト',
     description: 'ガンシューティングゲーム総合情報・攻略サイト',
@@ -29,6 +29,7 @@ module.exports = {
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-postcss',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
