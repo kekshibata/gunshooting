@@ -10,6 +10,7 @@ exports.createPages = async ({ actions, graphql }) => {
             edges {
                 node {
                 blogId
+                slug
                 game {
                     slug
                 }
@@ -28,7 +29,9 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: node.game ? `/${node.game.slug}/${node.blogId}` : `/posts/${node.blogId}`,
       component: node.game ? gamePostTemplate : blogPostTemplate,
-      context: node.game && { gameSlug: node.game.slug },
+      context: node.game
+        ? { gameSlug: node.game.slug, blogId: node.blogId }
+        : { blogId: node.blogId },
     });
   });
 };

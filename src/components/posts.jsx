@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { navigate, Link } from 'gatsby';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import { FiClock } from 'react-icons/fi';
@@ -16,15 +16,28 @@ import {
 } from './posts.module.css';
 
 const Posts = ({
-  title, writer, createdAt, imageUrl,
+  blogId, title, writer, createdAt, imageUrl, gameSlug,
 }) => (
   <>
     <div className={wrapper}>
       <div className={content}>
-        {imageUrl && <ImgixGatsbyImage src={imageUrl} layout="constrained" aspectRatio={16 / 9} alt="アイキャッチ" className={`z-10 ${imageCss}`} />}
+        {imageUrl
+        && (
+          <Link to={gameSlug ? `/${gameSlug}/${blogId}` : `/posts/${blogId}`} className={`z-10 ${imageCss} overflow-hidden`}>
+            <ImgixGatsbyImage
+              src={imageUrl}
+              layout="constrained"
+              aspectRatio={16 / 9}
+              alt="アイキャッチ"
+              className="block align-middle"
+            />
+          </Link>
+        )}
         <dl>
           <dt className={heading}>
-            {title.length > 23 ? `${title.substr(0, 22)}...` : title }
+            <Link to={gameSlug ? `/${gameSlug}/${blogId}` : `/posts/${blogId}`}>
+              {title.length > 23 ? `${title.substr(0, 22)}...` : title }
+            </Link>
           </dt>
           <dd className={attributesContainer}>
             <div className={attr}>

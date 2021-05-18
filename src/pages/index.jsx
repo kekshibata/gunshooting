@@ -6,19 +6,18 @@ import { FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import TopHeader from '../components/top-header';
-import Recommend from '../components/recommend';
 import Layout from '../components/layout';
+import Recommend from '../components/recommend';
 import HorizontalScroll from '../components/horizontal-scroll';
 import Posts from '../components/posts';
 import Button from '../components/button';
-import Footer from '../components/footer';
 
 import {
   bgGray,
   bgBlack,
   twitter,
   youtube,
-} from './top-page.module.css';
+} from './index.module.css';
 
 export default function HOME() {
   const data = useStaticQuery(graphql`
@@ -40,6 +39,9 @@ export default function HOME() {
             image {
               url
             }
+          }
+          game {
+            slug
           }
         }
       }
@@ -75,6 +77,8 @@ export default function HOME() {
           </div>
           {postsList.map(({ node }) => (
             <Posts
+              blogId={node.blogId}
+              gameSlug={node.game?.slug}
               title={node.title}
               writer={node.writer}
               createdAt={node.createdAt}

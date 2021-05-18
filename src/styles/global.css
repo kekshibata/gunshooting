@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 /* css */
+:root {
+  font-size: 16px;
+}
 
 body {
   margin: 0;

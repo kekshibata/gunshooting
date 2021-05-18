@@ -1,8 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { BiChevronRight } from 'react-icons/bi';
 
 import Layout from '../../components/layout';
 import GameHeader from '../../components/game-header';
+import Recommend from '../../components/recommend';
+
+import {
+  buffer,
+  breadcrumb,
+} from './game-page.module.css';
 
 const GamePage = ({ data }) => {
   const {
@@ -26,6 +33,19 @@ const GamePage = ({ data }) => {
         iconSource={iconSource}
         headerSource={headerSource}
       />
+      <div className={buffer}>
+        <div className={breadcrumb}>
+          <Link to="/">ガンシューティング</Link>
+          <BiChevronRight />
+          <Link to={`/${slug}`}>
+            {gameName}
+            攻略wiki
+          </Link>
+        </div>
+        <div className="mt-6 mb-5">
+          <Recommend />
+        </div>
+      </div>
     </Layout>
   );
 };

@@ -1,0 +1,16 @@
+.status {
+  color: var(--text-gray);
+}
+
+.status > div {
+  padding-top: 4px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+.body {
+  padding-top: 8px;
+  line-height: 1.75;
+}

@@ -12,6 +12,7 @@ const BlogPosts = ({ data }) => (
         {data.allMicrocmsBlog.edges.map(({ node }) => {
           const {
             title,
+            blogId,
             writer,
             createdAt,
             eyeCatch: {
@@ -19,9 +20,17 @@ const BlogPosts = ({ data }) => (
                 url,
               },
             },
+            game,
           } = node;
           return (
-            <Posts title={title} writer={writer} createdAt={createdAt} imageUrl={url} />
+            <Posts
+              blogId={blogId}
+              gameSlug={game?.slug}
+              title={title}
+              writer={writer}
+              createdAt={createdAt}
+              imageUrl={url}
+            />
           );
         })}
       </div>
@@ -47,6 +56,9 @@ query PostsPageQuery {
               image {
                 url
               }
+            }
+            game {
+              slug
             }
           }
         }

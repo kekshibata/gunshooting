@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import {
@@ -35,6 +35,12 @@ const HorizontalScroll = () => {
                 url
               }
             }
+            game {
+              slug
+            }
+            category {
+              name
+            }
           }
         }
       }
@@ -49,20 +55,29 @@ const HorizontalScroll = () => {
         {pickedList.map(({ node }) => {
           const {
             title,
+            blogId,
             eyeCatch: {
               image: {
                 url,
               },
             },
+            game,
+            category: {
+              name: categoryName,
+            },
           } = node;
 
           return (
-            <li className={`shadow-xl ${item}`}>
-              <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
-              <div className={`z-20 ${tag}`}>カテゴリ</div>
-              <div className={`z-20 ${titleLabel}`}>
-                <div className={`z-20 ${titleCss}`}>{title.length > 20 ? `${title.substr(0, 19)}...` : title }</div>
-              </div>
+            <li
+              className={`shadow-xl ${item}`}
+            >
+              <Link to={game ? `/${game.slug}/${blogId}` : `/posts/${blogId}`}>
+                <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
+                <div className={`z-20 ${tag}`}>{categoryName}</div>
+                <div className={`z-20 ${titleLabel}`}>
+                  <div className={`z-20 ${titleCss}`}>{title.length > 20 ? `${title.substr(0, 19)}...` : title }</div>
+                </div>
+              </Link>
             </li>
           );
         })}
