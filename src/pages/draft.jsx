@@ -19,7 +19,7 @@ const GamePost = ({ location }) => {
   React.useEffect(() => {
     fetch(`https://houseof.microcms.io/api/v1/blog/${contentId}?draftKey=${draftKey}`, {
       headers: {
-        'X-API-KEY': process.env.API_KEY,
+        'X-API-KEY': '42b26e8e-0c48-4089-b02a-b1b16fe9171c',
       },
     })
       .then((res) => res.json())
