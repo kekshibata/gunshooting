@@ -21,15 +21,17 @@ const WriterPage = ({ data }) => {
 
   return (
     <Layout>
-      <ImgixGatsbyImage
-        src={url}
-        layout="constrained"
-        aspectRatio={1 / 1}
-        width={160}
-        height={160}
-        className={`rounded-full z-10 block align-middle mx-auto shadow-xl my-4 ${avatar}`}
-      />
-      <div className="text-center font-bold text-xl">{name}</div>
+      <div className="flex flex-col align-center">
+        <ImgixGatsbyImage
+          src={url}
+          layout="constrained"
+          aspectRatio={1 / 1}
+          width={160}
+          height={160}
+          className={`rounded-full z-10 block align-middle mx-auto shadow-xl my-4 ${avatar}`}
+        />
+        <div className="text-center font-bold text-xl">{name}</div>
+      </div>
       <article className={body} dangerouslySetInnerHTML={{ __html: `${bio}` }} />
     </Layout>
   );
