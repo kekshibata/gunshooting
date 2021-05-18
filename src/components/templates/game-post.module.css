@@ -38,4 +38,5 @@
 .body {
   padding-top: 8px;
   line-height: 1.75;
+  overflow: hidden;
 }
