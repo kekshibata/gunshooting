@@ -13,6 +13,7 @@ const BlogPosts = ({ data }) => (
           const {
             title,
             blogId,
+            slug,
             writer,
             createdAt,
             eyeCatch: {
@@ -25,6 +26,7 @@ const BlogPosts = ({ data }) => (
           return (
             <Posts
               blogId={blogId}
+              slug={slug}
               gameSlug={game?.slug}
               title={title}
               writer={writer}
@@ -45,6 +47,7 @@ query PostsPageQuery {
           node {
             title
             blogId
+            slug
             createdAt(formatString: "YYYY/MM/DD")
             eyeCatch {
               image {

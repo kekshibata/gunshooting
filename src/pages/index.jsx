@@ -27,6 +27,7 @@ export default function HOME() {
         node {
           title
           blogId
+          slug
           id
           createdAt(formatString: "YYYY/MM/DD")
           writer {
@@ -80,6 +81,7 @@ export default function HOME() {
           {postsList.map(({ node }) => (
             <Posts
               blogId={node.blogId}
+              slug={node.slug}
               gameSlug={node.game?.slug}
               title={node.title}
               writer={node.writer}

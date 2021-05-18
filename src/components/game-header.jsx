@@ -10,7 +10,7 @@ import {
 } from './game-header.module.css';
 
 const GameHeader = ({
-  slug, id, gameName, menu, iconSource, headerSource,
+  slug, gameName, menu, iconSource, headerSource,
 }) => (
   <header>
     <div className={titleHeader}>
@@ -24,7 +24,7 @@ const GameHeader = ({
     <ul className={navMenu}>
       {menu.map(({ name: menuName, slug: menuSlug }) => (
         <li className={menuItem}>
-          <Link to={`/${slug}/${menuSlug}`} className={menuItemInner}>{menuName}</Link>
+          <Link to={menuSlug ? `/${slug}/${menuSlug}` : `/${slug}`} className={menuItemInner}>{menuName}</Link>
         </li>
       ))}
     </ul>

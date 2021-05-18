@@ -16,14 +16,14 @@ import {
 } from './posts.module.css';
 
 const Posts = ({
-  blogId, title, writer, createdAt, imageUrl, gameSlug,
+  blogId, title, writer, createdAt, imageUrl, gameSlug, slug,
 }) => (
   <>
     <div className={wrapper}>
       <div className={content}>
         {imageUrl
         && (
-          <Link to={gameSlug ? `/${gameSlug}/${blogId}` : `/posts/${blogId}`} className={`z-10 ${imageCss} overflow-hidden`}>
+          <Link to={gameSlug ? `/${gameSlug}/${slug}` : `/posts/${blogId}`} className={`z-10 ${imageCss} overflow-hidden`}>
             <ImgixGatsbyImage
               src={imageUrl}
               layout="constrained"
@@ -35,7 +35,7 @@ const Posts = ({
         )}
         <dl>
           <dt className={heading}>
-            <Link to={gameSlug ? `/${gameSlug}/${blogId}` : `/posts/${blogId}`}>
+            <Link to={gameSlug ? `/${gameSlug}/${slug}` : `/posts/${blogId}`}>
               {title.length > 23 ? `${title.substr(0, 22)}...` : title }
             </Link>
           </dt>

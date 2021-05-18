@@ -27,7 +27,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   postsList.forEach(({ node }) => {
     createPage({
-      path: node.game ? `/${node.game.slug}/${node.blogId}` : `/posts/${node.blogId}`,
+      path: node.game ? `/${node.game.slug}/${node.slug}` : `/posts/${node.blogId}`,
       component: node.game ? gamePostTemplate : blogPostTemplate,
       context: node.game
         ? { gameSlug: node.game.slug, blogId: node.blogId }

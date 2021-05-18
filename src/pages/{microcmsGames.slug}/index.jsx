@@ -14,7 +14,6 @@ import {
 const GamePage = ({ data }) => {
   const {
     slug,
-    id,
     gameName,
     menu,
     iconImage: {
