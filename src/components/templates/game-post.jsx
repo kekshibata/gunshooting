@@ -68,7 +68,7 @@ const GamePost = ({ data }) => {
           </div>
         </div>
         <article className="p-2 py-5">
-          <div className="font-bold text-xl">{title}</div>
+          <div className="font-bold text-2xl py-4">{title}</div>
           <div className={status}>
             <div className={descriptionCss}>{description}</div>
             <div>
