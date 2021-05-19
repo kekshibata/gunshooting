@@ -18,6 +18,7 @@
     "autoprefixer": "^10.2.5",
     "framer-motion": "^4.1.13",
     "gatsby": "^3.4.1",
+    "gatsby-plugin-catch-links": "^3.5.0",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
     "gatsby-plugin-google-gtag": "^3.5.0",
     "gatsby-plugin-image": "^1.4.1",

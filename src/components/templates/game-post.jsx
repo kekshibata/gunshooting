@@ -83,7 +83,7 @@ const GamePost = ({ data }) => {
           <ImgixGatsbyImage src={eyeCatchSource} layout="constrained" aspectRatio={16 / 9} className="w-full block align-middle rounded-lg z-10 my-4 shadow-lg" />
           <div className={bodyStyle}>
             {body.map(({
-              fieldId, richEditor, html, image, alt,
+              fieldId, richEditor, html, image, alt, first_title: firstTitle, second_title: secondTitle, row,
             }) => {
               switch (fieldId) {
                 case 'richEditor': return (
@@ -94,6 +94,44 @@ const GamePost = ({ data }) => {
                 );
                 case 'image': return (
                   <ImgixGatsbyImage src={image?.url} layout="constrained" aspectRatio={16 / 9} alt={alt} className="w-full block align-middle" />
+                );
+                case 'two-col-table': return (
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>{firstTitle}</th>
+                        <th>{secondTitle}</th>
+                      </tr>
+                      {row.map(({
+                        name: tdName,
+                        image: {
+                          url: imgSource,
+                        },
+                        alt: tableImgAlt,
+                        attribute: tdAttribute,
+                        slug: linkSlug,
+                      }) => (
+                        <tr>
+                          <td>
+                            <Link to={`/${slug}/${linkSlug}`}>
+                              <ImgixGatsbyImage
+                                src={`${imgSource}?w=45?h=45`}
+                                layout="constrained"
+                                width={45}
+                                height={45}
+                                alt={tableImgAlt}
+                                className="align-middle"
+                              />
+                              <div>{tdName}</div>
+                            </Link>
+                          </td>
+                          <td>
+                            {tdAttribute}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 );
                 default: return null;
               }
@@ -131,6 +169,17 @@ query GamePostQuery($gameSlug: String!, $blogId: String!) {
       alt
       image {
         url
+      }
+      first_title
+      second_title
+      row {
+        name
+        image {
+          url
+        }
+        attribute
+        slug
+        alt
       }
     }
     blogId

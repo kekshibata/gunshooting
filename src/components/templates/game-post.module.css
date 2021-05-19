@@ -41,7 +41,25 @@
   line-height: 1.75;
 }
 
-.body div {
+.body > div {
   width: 100%;
   overflow-x: hidden;
+}
+
+.body table {
+  font-size: 12px;
+  width: 100%;
+}
+
+.body th,
+td {
+  padding: 6px 8px;
+  border: 1px solid var(--color-lightgray);
+}
+
+.body tr > td:first-child {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-link-blue);
 }
