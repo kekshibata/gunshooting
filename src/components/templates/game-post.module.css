@@ -41,6 +41,10 @@
   line-height: 1.75;
 }
 
+.body p {
+  margin: 5px 0 10px;
+}
+
 .body > div {
   width: 100%;
   overflow-x: hidden;
