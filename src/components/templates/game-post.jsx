@@ -149,7 +149,7 @@ const GamePost = ({ data, location }) => {
                   <div dangerouslySetInnerHTML={{ __html: `${html}` }} />
                 );
                 case 'image': return (
-                  <ImgixGatsbyImage src={image?.url} layout="constrained" aspectRatio={16 / 9} alt={alt} className="w-full block align-middle" />
+                  <ImgixGatsbyImage src={image?.url} layout="constrained" aspectRatio={16 / 9} alt={alt} className="w-full block align-middle my-5" />
                 );
                 case 'two-col-table': return (
                   <table>
