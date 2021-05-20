@@ -17,6 +17,10 @@ section {
   padding: 20px 0;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* heading */
 .heading-wrapper {
   text-align: center;

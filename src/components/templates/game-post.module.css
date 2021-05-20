@@ -23,6 +23,10 @@
   color: var(--color-link-blue);
 }
 
+.article {
+  border-top: 1px solid var(--color-lightgray);
+}
+
 .status {
   color: var(--text-gray);
   font-size: 14px;
@@ -70,6 +74,11 @@ td {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-link-blue);
+}
+
+.body table hr {
+  margin: 3px 0;
+  border-top: 1px dotted #ccc;
 }
 
 .body h1,

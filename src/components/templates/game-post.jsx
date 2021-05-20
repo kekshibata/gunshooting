@@ -8,16 +8,18 @@ import SEO from '../seo';
 import Layout from '../layout';
 import GameHeader from '../game-header';
 import Recommend from '../recommend';
+import SocialIcons from '../social-icons';
 
 import {
   buffer,
   breadcrumb,
+  article,
   description as descriptionCss,
   status,
   body as bodyStyle,
 } from './game-post.module.css';
 
-const GamePost = ({ data }) => {
+const GamePost = ({ data, location }) => {
   const {
     slug,
     gameName,
@@ -67,7 +69,7 @@ const GamePost = ({ data }) => {
             <Recommend />
           </div>
         </div>
-        <article className="p-2 py-5">
+        <article className={`p-2 py-5 shadow-sm ${article}`}>
           <div className="font-bold text-2xl py-4">{title}</div>
           <div className={status}>
             <div className={descriptionCss}>{description}</div>
@@ -79,11 +81,19 @@ const GamePost = ({ data }) => {
               ライター：
               {writerName}
             </div>
+            <SocialIcons url={location.href} />
           </div>
           <ImgixGatsbyImage src={eyeCatchSource} layout="constrained" aspectRatio={16 / 9} className="w-full block align-middle rounded-lg z-10 my-4 shadow-lg" />
           <div className={bodyStyle}>
             {body.map(({
-              fieldId, richEditor, html, image, alt, first_title: firstTitle, second_title: secondTitle, row,
+              fieldId,
+              richEditor,
+              html,
+              image,
+              alt,
+              first_title: firstTitle,
+              second_title: secondTitle,
+              row,
             }) => {
               switch (fieldId) {
                 case 'richEditor': return (
@@ -109,6 +119,7 @@ const GamePost = ({ data }) => {
                         },
                         alt: tableImgAlt,
                         attribute: tdAttribute,
+                        second_attribute: secondAttribute,
                         slug: linkSlug,
                       }) => (
                         <tr>
@@ -126,7 +137,16 @@ const GamePost = ({ data }) => {
                             </Link>
                           </td>
                           <td>
-                            {tdAttribute}
+                            <div>
+                              {tdAttribute}
+                            </div>
+                            {secondAttribute
+                                && (
+                                <div>
+                                  <hr />
+                                  {secondAttribute}
+                                </div>
+                                )}
                           </td>
                         </tr>
                       ))}
@@ -178,6 +198,7 @@ query GamePostQuery($gameSlug: String!, $blogId: String!) {
           url
         }
         attribute
+        second_attribute
         slug
         alt
       }

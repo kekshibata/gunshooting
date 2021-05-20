@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import SEO from '../seo';
 import Layout from '../layout';
+import SocialIcons from '../social-icons';
 
 import {
   description as descriptionCss,
@@ -12,7 +13,7 @@ import {
   body as bodyStyle,
 } from './blog-post.module.css';
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   const {
     title,
     description,
@@ -33,7 +34,7 @@ const BlogPost = ({ data }) => {
       <Layout>
         <ImgixGatsbyImage src={eyeCatchSource} layout="constrained" aspectRatio={16 / 9} className="w-full block align-middle" />
         <article className="p-2">
-          <div className="font-bold text-xl">{title}</div>
+          <div className="font-bold text-2xl py-4">{title}</div>
           <div className={status}>
             <div className={descriptionCss}>{description}</div>
             <div>
@@ -44,6 +45,7 @@ const BlogPost = ({ data }) => {
               ライター：
               {writerName}
             </div>
+            <SocialIcons url={location.href} />
           </div>
           <div className={bodyStyle}>
             {body.map(({
