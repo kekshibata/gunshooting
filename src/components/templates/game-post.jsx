@@ -118,7 +118,7 @@ const GamePost = ({ data, location }) => {
           <div className={bodyStyle}>
 
             {/* 目次 */}
-            <div className="border border-solid border-gray-400 round-sm px-3 pt-3.5 pb-3 text-lg leading-9">
+            <div className="border border-solid border-gray-400 rounded-md px-4 py-3.5 w-4/5 mx-auto text-lg leading-9">
               <p className="font-semibold">目次</p>
               <ul className={tocStyle}>
                 {toc.map((item) => (
