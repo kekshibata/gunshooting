@@ -99,3 +99,23 @@ button:focus {
     opacity: 0;
   }
 }
+
+/*　目次 */
+
+ul .h2 {
+  margin-left: 1em;
+  position: relative;
+}
+
+ul .h2::before,
+.h3::before {
+  content: "-";
+  position: absolute;
+  top: 0;
+  left: -0.75em;
+}
+
+ul .h3 {
+  margin-left: 2em;
+  position: relative;
+}

@@ -4,6 +4,7 @@ import { BiChevronRight } from 'react-icons/bi';
 import moment from 'moment';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 import { DiscussionEmbed } from 'disqus-react';
+import { Link as ScrollLink } from 'react-scroll';
 
 import SEO from '../seo';
 import Layout from '../layout';
@@ -18,6 +19,7 @@ import {
   description as descriptionCss,
   status,
   body as bodyStyle,
+  toc as tocStyle,
 } from './game-post.module.css';
 
 const GamePost = ({ data, location }) => {
@@ -47,12 +49,26 @@ const GamePost = ({ data, location }) => {
     },
   } = data.microcmsBlog;
 
+  /* disqusコメント機能のコンフィグ */
   const disqusConfig = {
     config: {
       identifier: location.href,
       title,
     },
   };
+
+  /* 目次の作成 */
+  const wholeRichEditor = body.map(({ richEditor }) => {
+    if (richEditor) { return richEditor; }
+  });
+  const cheerio = require('cheerio');
+  const $ = cheerio.load(wholeRichEditor.join(''));
+  const headings = $('h1,h2,h3').toArray();
+  const toc = headings.map((heading) => ({
+    text: heading.children[0].data,
+    id: heading.attribs.id,
+    name: heading.name,
+  }));
 
   return (
     <>
@@ -92,8 +108,29 @@ const GamePost = ({ data, location }) => {
             </div>
             <SocialIcons url={location.href} />
           </div>
-          <ImgixGatsbyImage src={eyeCatchSource} layout="constrained" aspectRatio={16 / 9} className="w-full block align-middle rounded-lg z-10 my-4 shadow-lg" />
+          <ImgixGatsbyImage
+            src={eyeCatchSource}
+            layout="constrained"
+            aspectRatio={16 / 9}
+            className="w-full block align-middle rounded-lg z-10 my-4 shadow-lg"
+          />
+
           <div className={bodyStyle}>
+
+            {/* 目次 */}
+            <div className="border border-solid border-gray-400 round-sm px-3 pt-3.5 pb-3 text-lg leading-9">
+              <p className="font-semibold">目次</p>
+              <ul className={tocStyle}>
+                {toc.map((item) => (
+                  <li className={item.name}>
+                    <ScrollLink to={item.id} smooth duration={500} spy className="">
+                      {item.text}
+                    </ScrollLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {body.map(({
               fieldId,
               richEditor,

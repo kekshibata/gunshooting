@@ -40,6 +40,12 @@
   font-size: 12px;
 }
 
+/* body */
+
+.toc {
+  color: #444;
+}
+
 .body {
   padding-top: 8px;
   line-height: 1.75;
