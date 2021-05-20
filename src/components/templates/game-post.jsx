@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import { BiChevronRight } from 'react-icons/bi';
 import moment from 'moment';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
+import { DiscussionEmbed } from 'disqus-react';
 
 import SEO from '../seo';
 import Layout from '../layout';
@@ -45,6 +46,14 @@ const GamePost = ({ data, location }) => {
       name: writerName,
     },
   } = data.microcmsBlog;
+
+  const disqusConfig = {
+    config: {
+      identifier: location.href,
+      title,
+    },
+  };
+
   return (
     <>
       <SEO title={title} description={description} image={eyeCatchSource} />
@@ -153,11 +162,14 @@ const GamePost = ({ data, location }) => {
                     </tbody>
                   </table>
                 );
-                default: return null;
+                default: return undefined;
               }
             })}
           </div>
         </article>
+        <div className="mx-2 my-4">
+          <DiscussionEmbed shortname="ganshiyuteingu" config={disqusConfig} />
+        </div>
       </Layout>
     </>
   );

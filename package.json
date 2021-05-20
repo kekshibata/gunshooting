@@ -16,6 +16,7 @@
   "dependencies": {
     "@imgix/gatsby": "^1.6.1",
     "autoprefixer": "^10.2.5",
+    "disqus-react": "^1.0.11",
     "framer-motion": "^4.1.13",
     "gatsby": "^3.4.1",
     "gatsby-plugin-catch-links": "^3.5.0",

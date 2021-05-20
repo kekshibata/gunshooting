@@ -74,6 +74,7 @@ td {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-link-blue);
+  line-height: 1.5;
 }
 
 .body table hr {
