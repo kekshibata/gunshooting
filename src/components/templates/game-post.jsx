@@ -204,6 +204,7 @@ const GamePost = ({ data, location }) => {
             })}
           </div>
         </article>
+        <div />
         <div className="mx-2 my-4">
           <DiscussionEmbed shortname="ganshiyuteingu" config={disqusConfig} />
         </div>

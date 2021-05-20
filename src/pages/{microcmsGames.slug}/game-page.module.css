@@ -1,24 +1,75 @@
-.buffer {
-  background-color: var(--color-pale-pink);
+/* body */
+
+.toc {
+  color: #444;
+}
+
+.body {
   padding-top: 8px;
-  padding-bottom: 8px;
+  line-height: 1.75;
 }
 
-.breadcrumb {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
+.body p {
+  margin: 5px 0 10px;
+}
+
+.body table {
   font-size: 12px;
-  color: var(--text-gray);
+  width: 100%;
 }
 
-.breadcrumb * {
-  margin-left: 8px;
-  flex-shrink: 0;
+.body th,
+td {
+  padding: 6px 8px;
+  border: 1px solid var(--color-lightgray);
 }
 
-.breadcrumb > a {
+.body th {
+  background-color: #f5f5f5;
+}
+
+.body td {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--color-link-blue);
+  line-height: 1.5;
+}
+
+.body table hr {
+  margin: 3px 0;
+  border-top: 1px dotted #ccc;
+}
+
+.body h1,
+h2,
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 25px 0 20px;
+}
+
+.body h1 {
+  color: #fff;
+  background-color: var(--color-hodred);
+}
+
+.body h2 {
+  position: relative;
+}
+
+.body h2::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 0;
+  width: 5px;
+  height: calc(16px * 1.75);
+  background-color: var(--color-hodred);
+}
+
+.body h3 {
+  padding: 6px 10px;
+  margin: 10px 0;
 }
