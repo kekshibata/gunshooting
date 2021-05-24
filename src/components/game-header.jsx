@@ -15,7 +15,7 @@ const GameHeader = ({
   <header>
     <div className={titleHeader}>
       <Link to={`/${slug}`}>
-        <ImgixGatsbyImage src={iconSource} layout="constrained" width={35} height={35} className="block rounded-md shadow-sm z-10" />
+        <ImgixGatsbyImage src={iconSource} layout="constrained" width={35} height={35} className="block align-middle rounded-md shadow-sm z-10" />
       </Link>
       <Link to={`/${slug}`}>
         <div className="ml-2 font-bold leading-5 overflow-visible">
