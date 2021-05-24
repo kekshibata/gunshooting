@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
 
 import { FiClock } from 'react-icons/fi';
@@ -39,6 +39,9 @@ const Posts = ({
               {title.length > 23 ? `${title.substr(0, 22)}...` : title }
             </Link>
           </dt>
+          <span className="font-semibold text-red-700">
+            {gameSlug && `#${gameSlug}` }
+          </span>
           <dd className={attributesContainer}>
             <div className={attr}>
               <ImgixGatsbyImage src={writer.image?.url} layout="constrained" width={40} height={40} alt="avatar" className={`z-10 ${avatarImg}`} />

@@ -10,6 +10,7 @@ import {
   tag,
   titleLabel,
   title as titleCss,
+  hashTag,
 } from './horizontal-scroll.module.css';
 
 const HorizontalScroll = () => {
@@ -70,17 +71,25 @@ const HorizontalScroll = () => {
           } = node;
 
           return (
-            <li
-              className={`shadow-xl ${item}`}
-            >
-              <Link to={game ? `/${game.slug}/${slug}` : `/posts/${blogId}`}>
-                <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
-                <div className={`z-20 ${tag}`}>{categoryName}</div>
-                <div className={`z-20 ${titleLabel}`}>
-                  <div className={`z-20 ${titleCss}`}>{title.length > 20 ? `${title.substr(0, 19)}...` : title }</div>
-                </div>
-              </Link>
-            </li>
+            <>
+              <li
+                className={`shadow-xl ${item}`}
+              >
+                <Link to={game ? `/${game.slug}/${slug}` : `/posts/${blogId}`}>
+                  <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
+                  <div className={`z-20 ${tag}`}>{categoryName}</div>
+                  <div className={`z-20 ${titleLabel}`}>
+                    <div className={`z-20 ${titleCss}`}>{title.length > 20 ? `${title.substr(0, 19)}...` : title }</div>
+                  </div>
+                </Link>
+                {game?.slug && (
+                <span className={`text-red-700 font-semibold ${hashTag}`}>
+                  #
+                  {game.slug}
+                </span>
+                )}
+              </li>
+            </>
           );
         })}
 
