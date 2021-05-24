@@ -94,7 +94,7 @@ const GamePost = ({ data, location }) => {
             <Recommend />
           </div>
         </div>
-        <article className={`p-2 py-5 shadow-sm ${article}`}>
+        <article className={`p-2 py-5 mb-20 shadow-sm ${article}`}>
           <div className="font-bold text-2xl py-4">{title}</div>
           <div className={status}>
             <div className={descriptionCss}>{description}</div>

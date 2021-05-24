@@ -65,7 +65,7 @@ const GamePage = ({ data, location }) => {
           </div>
         </div>
 
-        <article className={`p-2 py-5 shadow-sm ${article}`}>
+        <article className={`p-2 py-5 mb-20 shadow-sm ${article}`}>
           <div className="font-bold text-2xl py-4">
             {gameName}
             攻略wikiトップ

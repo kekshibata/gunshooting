@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { ImgixGatsbyImage } from '@imgix/gatsby';
+import Slider from 'react-slick';
 
 import {
   wrapper,
@@ -70,18 +71,29 @@ const HorizontalScroll = () => {
             },
           } = node;
 
+          const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          };
+
           return (
             <>
               <li
                 className={`shadow-xl ${item}`}
               >
+
                 <Link to={game ? `/${game.slug}/${slug}` : `/posts/${blogId}`}>
+
                   <ImgixGatsbyImage src={url} layout="constrained" aspectRatio={16 / 9} alt="item" className={`z-10 ${imageCss}`} />
                   <div className={`z-20 ${tag}`}>{categoryName}</div>
                   <div className={`z-20 ${titleLabel}`}>
                     <div className={`z-20 ${titleCss}`}>{title.length > 20 ? `${title.substr(0, 19)}...` : title }</div>
                   </div>
                 </Link>
+
                 {game?.slug && (
                 <span className={`text-red-700 font-semibold ${hashTag}`}>
                   #
