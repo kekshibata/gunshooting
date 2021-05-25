@@ -47,6 +47,7 @@ const GamePost = ({ data, location }) => {
     writer: {
       name: writerName,
     },
+    relatedPosts,
   } = data.microcmsBlog;
 
   /* disqusコメント機能のコンフィグ */
@@ -203,8 +204,19 @@ const GamePost = ({ data, location }) => {
               }
             })}
           </div>
+          <aside className="py-5">
+            {relatedPosts && <h1 className="text-xl font-bold">こちらの記事もおすすめ</h1> }
+            {relatedPosts?.map(({ title, slug: linkSlug, eyeCatch: { image: { url: imagesrc } } }) => (
+              <Link to={`/${slug}/${linkSlug}`} className="flex flex-row my-4">
+
+                <ImgixGatsbyImage layout="constrained" aspectRatio={16 / 9} width={160} src={imagesrc} className="flex-shrink-0" />
+
+                <div className="font-semibold text-lg ml-2">{title}</div>
+
+              </Link>
+            ))}
+          </aside>
         </article>
-        <div />
         <div className="mx-2 my-4">
           <DiscussionEmbed shortname="ganshiyuteingu" config={disqusConfig} />
         </div>
@@ -267,6 +279,15 @@ query GamePostQuery($gameSlug: String!, $blogId: String!) {
     }
     game {
       slug
+    }
+    relatedPosts {
+      title
+      slug
+      eyeCatch {
+        image {
+          url
+        }
+      }
     }
   }
 }
