@@ -68,6 +68,7 @@ const GamePost = ({ location }) => {
               html,
               image,
               alt,
+              isNotAspectRatio16_9,
               first_title: firstTitle,
               second_title: secondTitle,
               row,
@@ -80,7 +81,18 @@ const GamePost = ({ location }) => {
                   <div dangerouslySetInnerHTML={{ __html: `${html}` }} />
                 );
                 case 'image': return (
-                  <ImgixGatsbyImage src={image?.url} layout="constrained" aspectRatio={16 / 9} alt={alt} className="w-full block align-middle" />
+                  isNotAspectRatio16_9
+                    ? (
+                      <ImgixGatsbyImage
+                        src={image?.url}
+                        layout="constrained"
+                        alt={alt}
+                        aspectRatio={1 / 1}
+                        className="w-full block align-middle my-5"
+                      />
+                    )
+                    : <ImgixGatsbyImage src={image?.url} layout="constrained" aspectRatio={16 / 9} alt={alt} className="w-full block align-middle my-5" />
+
                 );
                 case 'two-col-table': return (
                   <table>
