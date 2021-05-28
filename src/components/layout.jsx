@@ -8,7 +8,7 @@ const Layout = (props) => (
   <>
     <div className="max-w-lg mx-auto bg-white">
       <Header />
-      <motion.main
+      {/*       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -16,9 +16,9 @@ const Layout = (props) => (
           type: 'spring',
           duration: 0.5,
         }}
-      >
-        {props.children}
-      </motion.main>
+      > */}
+      {props.children}
+      {/* </motion.main> */}
       <Footer />
     </div>
     {/* <div className={background} /> */}

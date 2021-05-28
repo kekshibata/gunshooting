@@ -28,7 +28,7 @@ const GameHeader = ({
     <ul className={navMenu}>
       {menu.map(({ name: menuName, slug: menuSlug }) => (
         <li className={menuItem}>
-          <Link to={menuSlug ? `/${slug}/${menuSlug}` : `/${slug}`} className={menuItemInner}>{menuName}</Link>
+          <Link activeStyle={{ color: 'var(--color-red)' }} to={menuSlug ? `/${slug}/${menuSlug}` : `/${slug}`} className={`box-border ${menuItemInner}`}>{menuName}</Link>
         </li>
       ))}
     </ul>
