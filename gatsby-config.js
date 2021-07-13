@@ -36,7 +36,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: this.siteMetadata.siteUrl,
-        sitemap: `${this.siteMetadata.siteUrl}/sitemap/sitemap-index.xml`,
+        sitemap: `${this.siteMetadata.siteUrl}/sitemap/sitemap-0.xml`,
       },
     },
     {
