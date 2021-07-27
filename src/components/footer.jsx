@@ -20,9 +20,9 @@ const Footer = () => (
       <div className="mb-10 mt-2">
         <Logo height="40px" />
       </div>
-      <div className="mb-2.5">
-        <TaitaLogo />
-      </div>
+      {/* <div className="mb-2.5">
+        <TataLogo />
+</div> */}
       <div className="mb-2.5">
         &copy; 2021 all rights reserved
       </div>
